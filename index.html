@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Baby Journey ♡</title>
+
+  <style>
+    :root {
+      --cream: #fbf8f3;
+      --white: #ffffff;
+      --beige: #eee2d4;
+      --brown: #6f5747;
+      --dark: #4e3c31;
+      --muted: #8d7b6d;
+      --line: #dfd0c0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--dark);
+      font-family: Arial, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(251,248,243,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(111,87,71,0.08);
+    }
+
+    .nav {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 20px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 22px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 55px 0 35px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(40px, 6vw, 65px);
+      line-height: 1;
+      font-weight: normal;
+      margin: 0 0 18px;
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 470px;
+      line-height: 1.7;
+    }
+
+    .hero-photo {
+      aspect-ratio: 4 / 3;
+      border-radius: 25px;
+      background: var(--beige);
+      border: 1px solid var(--line);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--muted);
+      overflow: hidden;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* INFO */
+
+    .info {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .value {
+      font-family: Georgia, serif;
+      font-size: 23px;
+    }
+
+    section {
+      padding: 50px 0;
+    }
+
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight: normal;
+      margin: 0 0 25px;
+    }
+
+    /* TIMELINE */
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 5px;
+      bottom: 5px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .event {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .event::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 5px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--brown);
+    }
+
+    .event-date {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .event-title {
+      font-size: 16px;
+      margin-top: 3px;
+    }
+
+    .event-desc {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* TRIMESTER */
+
+    .trimester {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .trimester h3 {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: normal;
+      margin: 8px 0;
+    }
+
+    .trimester p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* USG */
+
+    .album {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .usg-photo {
+      aspect-ratio: 1;
+      background: #f4eee7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .usg-info {
+      padding: 14px;
+    }
+
+    .usg-title {
+      font-size: 15px;
+    }
+
+    .usg-date {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* JOURNAL */
+
+    .journal {
+      max-width: 700px;
+      margin: auto;
+      padding: 30px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      text-align: center;
+    }
+
+    .journal p {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      line-height: 1.7;
+      color: var(--brown);
+    }
+
+    /* AFTER BIRTH */
+
+    .after {
+      background: var(--beige);
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .age {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 35px 0 50px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:760px) {
+
+      .menu {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info {
+        grid-template-columns: 1fr;
+      }
+
+      .trimester,
+      .album {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 45px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav">
+
+      <div class="logo">
+        Our Baby Journey ♡
+      </div>
+
+      <div class="menu">
+        <a href="#home">Beranda</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#trimester">Trimester</a>
+        <a href="#usg">USG</a>
+        <a href="#journal">Journal</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HOME -->
+
+  <section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          Perjalanan kecil kami
+        </div>
+
+        <h1>
+          Sembilan bulan
+          <br>
+          menuju kamu.
+        </h1>
+
+        <p class="intro">
+          Perjalanan kecil dari awal kehamilan
+          sampai hari kami bertemu denganmu.
+        </p>
+
+        <div class="card">
+
+          <div class="label">
+            Usia kehamilan
+          </div>
+
+          <div class="value" id="pregnancyAge">
+            Memuat...
+          </div>
+
+          <div class="label" id="trimesterNow"></div>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-photo">
+
+        Foto keluarga / USG
+
+      </div>
+
+    </div>
+
+
+    <div class="container info">
+
+      <div class="card">
+
+        <div class="label">
+          HPHT
+        </div>
+
+        <div class="value">
+          16 Jul 2026
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="label">
+          Perkiraan HPL
+        </div>
+
+        <div class="value">
+          23 Apr 2027
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="label">
+          Menuju pertemuan
+        </div>
+
+        <div class="value" id="countdown">
+          Memuat...
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TIMELINE -->
+
+  <section id="timeline">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Timeline
+      </h2>
+
+      <div class="timeline">
+
+        <div class="event">
+
+          <div class="event-date">
+            16 Juli 2026
+          </div>
+
+          <div class="event-title">
+            HPHT
+          </div>
+
+          <div class="event-desc">
+            Awal perjalanan.
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="event-date">
+            3 September 2026
+          </div>
+
+          <div class="event-title">
+            USG Pertama
+          </div>
+
+          <div class="event-desc">
+            Momen pertama yang kami simpan.
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="event-date">
+            Minggu 1–13
+          </div>
+
+          <div class="event-title">
+            Trimester 1
+          </div>
+
+          <div class="event-desc">
+            Awal kehidupan.
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="event-date">
+            Minggu 14–27
+          </div>
+
+          <div class="event-title">
+            Trimester 2
+          </div>
+
+          <div class="event-desc">
+            Bayi semakin berkembang.
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="event-date">
+            Minggu 28–40
+          </div>
+
+          <div class="event-title">
+            Trimester 3
+          </div>
+
+          <div class="event-desc">
+            Menunggu hari pertemuan.
+          </div>
+
+        </div>
+
+
+        <div class="event">
+
+          <div class="event-date">
+            23 April 2027
+          </div>
+
+          <div class="event-title">
+            HPL ♡
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TRIMESTER -->
+
+  <section id="trimester">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Trimester
+      </h2>
+
+      <div class="trimester">
+
+        <div class="card">
+
+          <div class="label">
+            01 · Minggu 1–13
+          </div>
+
+          <h3>
+            Awal Kehidupan
+          </h3>
+
+          <p>
+            Perkembangan dasar bayi dimulai.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="label">
+            02 · Minggu 14–27
+          </div>
+
+          <h3>
+            Mulai Aktif
+          </h3>
+
+          <p>
+            Bayi tumbuh dan semakin aktif.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="label">
+            03 · Minggu 28–40
+          </div>
+
+          <h3>
+            Menuju Pertemuan
+          </h3>
+
+          <p>
+            Persiapan menuju hari kelahiran.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ALBUM USG -->
+
+  <section id="usg">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Album USG
+      </h2>
+
+      <div class="album">
+
+        <div class="card">
+
+          <div class="usg-photo">
+            Tambahkan foto USG
+          </div>
+
+          <div class="usg-info">
+
+            <div class="usg-title">
+              USG Pertama
+            </div>
+
+            <div class="usg-date">
+              3 Sep 2026 · 7 minggu
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="usg-photo">
+            Tambahkan foto USG
+          </div>
+
+          <div class="usg-info">
+
+            <div class="usg-title">
+              USG Kedua
+            </div>
+
+            <div class="usg-date">
+              Tanggal · usia kehamilan
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="usg-photo">
+            +
+          </div>
+
+          <div class="usg-info">
+
+            <div class="usg-title">
+              Momen berikutnya
+            </div>
+
+            <div class="usg-date">
+              Foto · tanggal
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- JOURNAL -->
+
+  <section id="journal">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Journal
+      </h2>
+
+      <div class="journal">
+
+        <p>
+          “Kami menunggumu, Nak. ♡”
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- AFTER BIRTH -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="after">
+
+        <div class="eyebrow">
+          Nanti, setelah kamu lahir
+        </div>
+
+        <h2 class="section-title">
+          Selamat datang di dunia, Nak. ♡
+        </h2>
+
+        <div class="age">
+          —
+        </div>
+
+        <div class="label">
+          Usia si kecil setelah tanggal lahir dimasukkan.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    Made with love by Ayah & Ibu ♡
+  </footer>
+
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    const HPHT = new Date("2026-07-16T00:00:00");
+
+    const HPL = new Date("2027-04-23T00:00:00");
+
+
+    function updatePregnancy() {
+
+      const now = new Date();
+
+      const days =
+        Math.floor(
+          (now - HPHT) /
+          (1000 * 60 * 60 * 24)
+        );
+
+
+      const weeks =
+        Math.floor(days / 7);
+
+      const remainingDays =
+        days % 7;
+
+
+      let trimester;
+
+
+      if (weeks <= 13) {
+
+        trimester = "Trimester 1";
+
+      } else if (weeks <= 27) {
+
+        trimester = "Trimester 2";
+
+      } else {
+
+        trimester = "Trimester 3";
+
+      }
+
+
+      document.getElementById("pregnancyAge").textContent =
+        weeks + " minggu " +
+        remainingDays + " hari";
+
+
+      document.getElementById("trimesterNow").textContent =
+        trimester;
+
+
+      const remaining =
+        Math.max(
+          0,
+          Math.ceil(
+            (HPL - now) /
+            (1000 * 60 * 60 * 24)
+          )
+        );
+
+
+      document.getElementById("countdown").textContent =
+        remaining + " hari";
+
+    }
+
+
+    updatePregnancy();
+
+    setInterval(
+      updatePregnancy,
+      60000
+    );
+
+  </script>
+
+</body>
+</html>
